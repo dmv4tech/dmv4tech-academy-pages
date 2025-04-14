@@ -6,36 +6,86 @@
   <title>Scratch Programming - DMV4Tech Academy</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #fffbea;
-      padding: 20px;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: #f0f8ff;
+      margin: 0;
+      padding: 0;
       color: #333;
     }
 
-    h1 {
-      color: #ff6600;
+    header {
+      background-color: #00bfff;
+      padding: 20px;
+      text-align: center;
+      color: white;
     }
 
-    a {
-      color: #00bfff;
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    nav {
+      background: #ffa500;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
       text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
     }
 
     .content {
+      padding: 40px 20px;
       max-width: 800px;
       margin: auto;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #00bfff;
+    }
+
+    footer {
+      text-align: center;
+      background: #00bfff;
+      color: white;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
+  <header>
+    <h1>DMV4Tech Academy</h1>
+    <p>Unleash Creativity with Scratch Programming</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#courses">Courses</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <div class="content">
-    <h1>Scratch Programming</h1>
+    <h2>Scratch Programming</h2>
     <p><strong>Age Group:</strong> 6–10 years</p>
     <p><strong>Duration:</strong> 8 weeks (1 session/week)</p>
     <p><strong>Level:</strong> Beginner</p>
 
-    <h2>What Kids Will Learn</h2>
+    <h3>What Kids Will Learn</h3>
     <ul>
       <li>Understanding coding logic with drag-and-drop blocks</li>
       <li>Creating fun animations and interactive stories</li>
@@ -43,10 +93,16 @@
       <li>Problem-solving through play</li>
     </ul>
 
-    <h2>Tools Used</h2>
+    <h3>Tools Used</h3>
     <p>Scratch (MIT), Internet browser (no installation required)</p>
 
     <p><a href="index.html">← Back to Home</a></p>
   </div>
+
+  <footer id="contact">
+    <p>Contact us: <a href="mailto:dmv4tech@gmail.com">dmv4tech@gmail.com</a> | Phone: <a href="tel:+12403088121">+1 240-308-8121</a></p>
+    <p>© 2025 DMV4Tech Academy</p>
+  </footer>
+
 </body>
 </html>
