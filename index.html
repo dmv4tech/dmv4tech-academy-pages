@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DMV4Tech Academy - Kids Programming School</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: #f0f8ff;
+      color: #333;
+    }
+
+    .content {
+      flex: 1;
+    }
+
+    header {
+      background-color: #00bfff;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+    }
+
+    nav {
+      background: #ffa500;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background: #fffacd;
+    }
+
+    .hero h2 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      background: #e6f7ff;
+    }
+
+    .course {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .course h3 {
+      margin-top: 0;
+    }
+
+    .course h3 a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .course h3 a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      background: #00bfff;
+      color: white;
+      padding: 20px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <header>
+      <h1>DMV4Tech Academy</h1>
+      <p>Where Kids Learn to Code with Fun!</p>
+    </header>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#courses">Courses</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="hero">
+      <h2>Welcome to DMV4Tech Academy!</h2>
+      <p>We teach kids aged 6–14 the magic of coding through games, animations, and interactive projects using Scratch, Python, and more!</p>
+    </section>
+
+    <section class="courses" id="courses">
+      <div class="course">
+        <h3><a href="page1.html">Scratch Programming</a></h3>
+        <p>Build your own games and animations with colorful blocks — perfect for young minds!</p>
+      </div>
+
+      <div class="course">
+        <h3><a href="page2.html">Python for Kids</a></h3>
+        <p>Start real-world coding with easy-to-learn Python basics in a kid-friendly environment.</p>
+      </div>
+
+      <div class="course">
+        <h3><a href="page3.html">Robotics & Coding</a></h3>
+        <p>Combine programming with robotics kits to make fun, interactive gadgets!</p>
+      </div>
+
+      <div class="course">
+        <h3><a href="page4.html">Intro to AI & ML</a></h3>
+        <p>Get introduced to smart technology, from image recognition to beginner-friendly AI projects, designed for curious young minds!</p>
+      </div>
+    </section>
+  </div>
+
+  <footer id="contact">
+    <p>Contact us: <a href="mailto:dmv4tech@gmail.com">dmv4tech@gmail.com</a> | Phone: <a href="tel:+12403088121">+1 240-308-8121</a></p>
+    <p>© 2025 DMV4Tech Academy</p>
+  </footer>
+
+</body>
+</html>
