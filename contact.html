@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - DMV4Tech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9f9f9;
+      padding: 2rem;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1a1a1a;
+      margin-bottom: 1rem;
+    }
+
+    p.intro {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    form {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      padding: 0.9rem 1.5rem;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .thank-you {
+      max-width: 500px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background-color: #e6ffed;
+      color: #276749;
+      border: 1px solid #c6f6d5;
+      border-radius: 8px;
+      display: none;
+      text-align: center;
+      font-weight: 500;
+      font-size: 1.05rem;
+    }
+  </style>
+  <script>
+    window.addEventListener("DOMContentLoaded", function () {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("success") === "true") {
+        document.querySelector(".thank-you").style.display = "block";
+      }
+    });
+  </script>
+</head>
+<body>
+  <h1>Let’s Connect!</h1>
+  <p class="intro">Have a question, feedback, or collaboration idea? We would love to hear from you!</p>
+
+  <div class="thank-you">
+    ✅ Thank you for your interest in DMV4Tech Academy!<br>
+    We've received your message and will reach out to you shortly.
+  </div>
+
+  <form action="https://formspree.io/f/mrbpvgwj" method="POST">
+    <input type="hidden" name="_redirect" value="https://www.dmv4tech.com/contact.html?success=true" />
+
+    <label for="name">Your Name</label>
+    <input type="text" name="name" id="name" required />
+
+    <label for="email">Your Email</label>
+    <input type="email" name="_replyto" id="email" required />
+
+    <label for="message">Your Message</label>
+    <textarea name="message" id="message" rows="6" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</body>
+</html>
