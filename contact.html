@@ -79,12 +79,30 @@
       font-weight: 500;
       font-size: 1.05rem;
     }
+
+    .thank-you a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #007BFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: background-color 0.2s ease;
+    }
+
+    .thank-you a:hover {
+      background-color: #0056b3;
+    }
   </style>
+
   <script>
-    window.addEventListener("DOMContentLoaded", function () {
-      const params = new URLSearchParams(window.location.search);
-      if (params.get("success") === "true") {
-        document.querySelector(".thank-you").style.display = "block";
+    document.addEventListener("DOMContentLoaded", function () {
+      const thankYouBox = document.querySelector(".thank-you");
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get("success") === "true") {
+        thankYouBox.style.display = "block";
       }
     });
   </script>
@@ -95,7 +113,8 @@
 
   <div class="thank-you">
     ✅ Thank you for your interest in DMV4Tech Academy!<br>
-    We've received your message and will reach out to you shortly.
+    We've received your message and will reach out to you shortly.<br>
+    <a href="index.html">⬅️ Go Back Home</a>
   </div>
 
   <form action="https://formspree.io/f/mrbpvgwj" method="POST">
