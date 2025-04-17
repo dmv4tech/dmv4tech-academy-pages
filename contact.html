@@ -26,110 +26,110 @@
       color: #555;
     }
 
-    form {
-      background: #fff;
-      padding: 2rem;
-      border-radius: 12px;
-      max-width: 500px;
-      margin: auto;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    }
-
-    label {
+    .contact-btn {
       display: block;
-      margin-top: 1rem;
-      font-weight: 600;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin-top: 0.3rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-
-    button {
-      margin-top: 1.5rem;
-      padding: 0.9rem 1.5rem;
+      width: 250px;
+      margin: 3rem auto;
+      padding: 1rem 2rem;
       background-color: #007BFF;
       color: white;
+      text-align: center;
+      font-size: 1.2rem;
       border: none;
       border-radius: 8px;
-      font-size: 1rem;
       cursor: pointer;
-      transition: background-color 0.2s ease;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
-    button:hover {
+    .contact-btn:hover {
       background-color: #0056b3;
+      transform: translateY(-2px);
     }
 
     .thank-you {
-      max-width: 500px;
-      margin: 2rem auto;
-      padding: 1.5rem;
-      background-color: #e6ffed;
-      color: #276749;
-      border: 1px solid #c6f6d5;
-      border-radius: 8px;
       display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(to right, #e6ffed, #ffffff);
+      color: #2f855a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      font-weight: 500;
-      font-size: 1.05rem;
+      padding: 2rem;
+      box-sizing: border-box;
+      animation: fadeIn 0.5s ease-in-out;
+      z-index: 999;
+    }
+
+    .thank-you h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .thank-you p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
     }
 
     .thank-you a {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
+      padding: 0.75rem 1.75rem;
       background-color: #007BFF;
       color: white;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: 500;
-      transition: background-color 0.2s ease;
+      border-radius: 8px;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     .thank-you a:hover {
       background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      .thank-you h2 {
+        font-size: 1.5rem;
+      }
+      .thank-you p {
+        font-size: 1rem;
+      }
     }
   </style>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const thankYouBox = document.querySelector(".thank-you");
+      const thankYou = document.querySelector('.thank-you');
       const urlParams = new URLSearchParams(window.location.search);
+
+      // Check if the URL contains the success=true parameter
       if (urlParams.get("success") === "true") {
-        thankYouBox.style.display = "block";
+        thankYou.style.display = 'flex';
       }
     });
   </script>
 </head>
 <body>
+
   <h1>Let’s Connect!</h1>
   <p class="intro">Have a question, feedback, or collaboration idea? We would love to hear from you!</p>
 
-  <div class="thank-you">
-    ✅ Thank you for your interest in DMV4Tech Academy!<br>
-    We've received your message and will reach out to you shortly.<br>
-    <a href="index.html">⬅️ Go Back Home</a>
-  </div>
+  <!-- Thank You Message (Visible only after successful form submission) -->
 
-  <form action="https://formspree.io/f/mrbpvgwj" method="POST">
-    <input type="hidden" name="_redirect" value="https://www.dmv4tech.com/contact.html?success=true" />
 
-    <label for="name">Your Name</label>
-    <input type="text" name="name" id="name" required />
+  <!-- Contact Button to Open Google Form -->
+  <button class="contact-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScBsdanaBlOmhmPY7Gn87lTht8VAT7buJ8hT4BkYagRxAiiaA/viewform?usp=header', '_blank')">Click here</button>
 
-    <label for="email">Your Email</label>
-    <input type="email" name="_replyto" id="email" required />
-
-    <label for="message">Your Message</label>
-    <textarea name="message" id="message" rows="6" required></textarea>
-
-    <button type="submit">Send Message</button>
-  </form>
 </body>
 </html>
