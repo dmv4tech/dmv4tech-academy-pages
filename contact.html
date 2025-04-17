@@ -46,6 +46,25 @@
       transform: translateY(-2px);
     }
 
+    .home-btn {
+      display: block;
+      width: fit-content;
+      margin: 2rem auto 0;
+      padding: 0.6rem 1.2rem;
+      background-color: #6c757d;
+      color: white;
+      font-size: 0.95rem;
+      text-align: center;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .home-btn:hover {
+      background-color: #5a6268;
+    }
+
     .thank-you {
       display: none;
       position: fixed;
@@ -113,7 +132,6 @@
       const thankYou = document.querySelector('.thank-you');
       const urlParams = new URLSearchParams(window.location.search);
 
-      // Check if the URL contains the success=true parameter
       if (urlParams.get("success") === "true") {
         thankYou.style.display = 'flex';
       }
@@ -125,11 +143,11 @@
   <h1>Let’s Connect!</h1>
   <p class="intro">Have a question, feedback, or collaboration idea? We would love to hear from you!</p>
 
-  <!-- Thank You Message (Visible only after successful form submission) -->
-
-
   <!-- Contact Button to Open Google Form -->
   <button class="contact-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScBsdanaBlOmhmPY7Gn87lTht8VAT7buJ8hT4BkYagRxAiiaA/viewform?usp=header', '_blank')">Click here</button>
+
+  <!-- Small Home Button at Bottom -->
+  <button class="home-btn" onclick="window.location.href='https://dmv4tech.com/index.html'">⬅️ Back to Home</button>
 
 </body>
 </html>
