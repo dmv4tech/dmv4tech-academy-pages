@@ -1,49 +1,157 @@
-<!-- Simple Contact Form -->
-<form id="contactForm" style="max-width: 500px; margin: auto; padding: 1rem; background: #f0f8ff; border-radius: 8px;">
-  <h2>Contact DMV4Tech Academy</h2>
-  <label for="name">Name:</label><br>
-  <input type="text" name="name" required style="width: 100%; padding: 8px; margin-bottom: 10px;" /><br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact DMV4Tech Academy</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 2rem;
+      color: #333;
+    }
 
-  <label for="email">Email:</label><br>
-  <input type="email" name="email" required style="width: 100%; padding: 8px; margin-bottom: 10px;" /><br>
+    h2 {
+      text-align: center;
+      color: #007BFF;
+    }
 
-  <label for="message">Message:</label><br>
-  <textarea name="message" required rows="4" style="width: 100%; padding: 8px; margin-bottom: 10px;"></textarea><br>
+    form {
+      max-width: 500px;
+      margin: auto;
+      padding: 1.5rem;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-  <button type="submit" style="padding: 10px 20px; background-color: #00bfff; color: white; border: none; border-radius: 6px; font-weight: bold;">Submit</button>
-</form>
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
 
-<!-- Submission Status Message -->
-<p id="statusMessage" style="text-align: center; margin-top: 1rem;"></p>
+    button {
+      padding: 12px 20px;
+      background-color: #00bfff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+    }
 
-<!-- KEEP the same HTML form as before -->
-<script>
-  const scriptURL = "https://script.google.com/macros/s/AKfycbzcA0A_UMLGPMMhNGIZwF8oBoGzRTL9Tp3mO6XInFa19aDy6nXMLGgHgr2llrIs5pM/exec";
-  const form = document.getElementById('contactForm');
-  const status = document.getElementById('statusMessage');
+    button:hover {
+      background-color: #009acd;
+    }
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    status.textContent = "Sending...";
+    #statusMessage {
+      max-width: 500px;
+      margin: 1.5rem auto;
+      text-align: center;
+      font-size: 1.1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      display: none;
+    }
 
-    const formData = new FormData(form);
+    #statusMessage.success {
+      background-color: #e6ffed;
+      color: #2f855a;
+      border: 1px solid #b5e7c4;
+    }
 
-    fetch(scriptURL, {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => {
-      if (response.ok) {
-        status.textContent = "✅ Thank you! Your message has been submitted.";
-        form.reset();
-      } else {
+    #statusMessage.error {
+      background-color: #ffe6e6;
+      color: #d9534f;
+      border: 1px solid #f5c6cb;
+    }
+
+    .back-home-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 10px 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+    .back-home-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Contact Form -->
+  <form id="contactForm">
+     <h2>Welcome to DMV4Tech Academy</h2>
+    <label for="name">Name:</label>
+    <input type="text" name="name" required />
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" required />
+
+    <label for="message">Message:</label>
+    <textarea name="message" rows="4" required></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Submission Status Message -->
+  <div id="statusMessage"></div>
+
+  <!-- Submission Script -->
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbw2bdSt--yu33wuusZiUagGlq52gbFiWDlUVM9-WtaP-vQGiBN_XELIP6HaqTD5h9M/exec";
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('statusMessage');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      status.textContent = "⏳ Sending your message...";
+      status.className = '';
+      status.style.display = 'block';
+
+      const formData = new FormData(form);
+
+      fetch(scriptURL, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          status.innerHTML = `
+            <strong>✅ Thank you for reaching out!</strong><br/>
+            We've received your message and our team will follow up with you shortly. 🚀<br/><br/>
+            In the meantime, feel free to explore our website or follow us on social media!<br/><br/>
+            <a href="index.html" class="back-home-btn">⬅️ DMV4Tech Academy</a>
+          `;
+          status.className = 'success';
+          form.reset();
+        } else {
+          status.textContent = "❌ Something went wrong. Please try again.";
+          status.className = 'error';
+        }
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
         status.textContent = "❌ Something went wrong. Please try again.";
-      }
-    })
-    .catch(error => {
-      console.error('Error!', error.message);
-      status.textContent = "❌ Something went wrong. Please try again.";
+        status.className = 'error';
+      });
     });
-  });
-</script>
+  </script>
 
+</body>
+</html>
