@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank you for your interest in DMV4Tech Academy</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+    }
+    #contactForm {
+      max-width: 500px;
+      margin: auto;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #00bfff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #00a8cc;
+    }
+    .interest-button {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .interest-button a {
+      font-size: 18px;
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .interest-button a:hover {
+      text-decoration: underline;
+    }
+    .interest-note {
+      font-size: 14px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="contactForm">
+    <h2>Welcome to DMV4Tech Academy</h2>
+    <form id="form" action="https://script.google.com/macros/s/AKfycby23uX-mi0aElQYvrrotT5SEPGRMVbmmlvPpyrbcMVPBqyYePjzSpIqg5kbuci1coNB/exec" method="POST" style="
+      max-width: 600px;
+      margin: 2rem auto;
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      font-family: 'Segoe UI', sans-serif;
+    ">
+      <h2 style="text-align: center; color: #0077cc; margin-bottom: 1.5rem;">✨ Join the Waitlist</h2>
+
+      <label>👨‍👩‍👧 Parent's Full Name:</label>
+      <input type="text" name="Parent's Full Name" required style="width: 100%; padding: 12px; margin: 8px 0 16px; border: 1px solid #ccc; border-radius: 8px;" />
+
+      <label>📞 Parent's Phone Number:</label>
+      <input type="text" name="Parent's Phone Number" pattern="^\d{7,15}$" title="Enter 7–15 digits only" required style="width: 100%; padding: 12px; margin: 8px 0 16px; border: 1px solid #ccc; border-radius: 8px;" />
+
+      <label>📧 Parent's Email Address:</label>
+      <input type="email" name="Parent's Email Address" required style="width: 100%; padding: 12px; margin: 8px 0 16px; border: 1px solid #ccc; border-radius: 8px;" />
+
+      <label>🎓 Child's Age or Current Grade:</label>
+      <input type="text" name="Child's Age or Current Grade" required style="width: 100%; padding: 12px; margin: 8px 0 16px; border: 1px solid #ccc; border-radius: 8px;" />
+
+      <label>💻 Course(s) Interested In:</label>
+      <small style="display:block; margin-bottom: 6px; color: #666;">(Hold down <kbd>Ctrl</kbd> or <kbd>Cmd</kbd> to select multiple)</small>
+      <select name="Course interested in for your child" multiple required size="5" style="width: 100%; padding: 12px; margin: 8px 0 16px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;">
+        <option value="Scratch Programming">🧩 Scratch Programming</option>
+        <option value="Python for Kids">🐍 Python for Kids</option>
+        <option value="Robotics & Coding">🤖 Robotics & Coding</option>
+        <option value="Intro to AI & ML">🧠 Intro to AI & ML</option>
+        <option value="Other">✨ Other (Please specify below)</option>
+      </select>
+
+      <input type="text" name="Other (Please specify)" placeholder="If Other, please specify here"
+        style="width: 100%; padding: 10px; margin-bottom: 16px; border: 1px solid #ccc; border-radius: 8px;" />
+
+      <label>🧠 Child's Current Programming Experience:</label>
+      <input type="text" name="Child's current level of programming experiance" required style="width: 100%; padding: 12px; margin: 8px 0 16px; border: 1px solid #ccc; border-radius: 8px;" />
+
+      <label>🕒 Preferred Day(s) and Time(s):</label>
+      <div id="scheduleContainer">
+        <div class="schedule-entry" style="margin-bottom: 16px;">
+          <select name="Preferred Day" required onchange="adjustTimeLimit(this)" style="width: 48%; padding: 12px; margin: 4px 1% 8px 0; border: 1px solid #ccc; border-radius: 8px;">
+            <option value="">-- Select Day --</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+          </select>
+          <input type="time" name="Preferred Time" required style="width: 48%; padding: 12px; margin: 4px 0 8px 1%; border: 1px solid #ccc; border-radius: 8px;" />
+        </div>
+      </div>
+
+      <button type="button" onclick="addScheduleEntry()" style="margin-bottom: 16px; background-color: #e0f7ff; border: none; padding: 10px 16px; border-radius: 8px; font-weight: bold; cursor: pointer;">
+        ➕ Add Another Day/Time
+      </button>
+
+      <label>💬 Comments:</label>
+      <textarea name="Comments" rows="3" style="width: 100%; padding: 12px; margin: 8px 0 24px; border: 1px solid #ccc; border-radius: 8px;"></textarea>
+
+      <button type="submit" style="background-color: #00bfff; color: white; padding: 14px 28px; border: none; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; width: 100%; transition: background-color 0.3s ease;">
+        🚀 Submit
+      </button>
+
+      <p id="statusMessage" style="text-align: center; margin-top: 1rem; font-weight: 500;"></p>
+    </form>
+  </div>
+
+
+  <script>
+    function addScheduleEntry() {
+      const container = document.getElementById('scheduleContainer');
+      const entry = document.createElement('div');
+      entry.className = 'schedule-entry';
+      entry.style.marginBottom = '16px';
+      entry.innerHTML = ` 
+        <select name="Preferred Day" required onchange="adjustTimeLimit(this)" 
+          style="width: 48%; padding: 12px; margin: 4px 1% 8px 0; border: 1px solid #ccc; border-radius: 8px;">
+          <option value="">-- Select Day --</option>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+          <option value="Sunday">Sunday</option>
+        </select>
+        <input type="time" name="Preferred Time" required 
+          style="width: 48%; padding: 12px; margin: 4px 0 8px 1%; border: 1px solid #ccc; border-radius: 8px;" />
+      `;
+      container.appendChild(entry);
+    }
+
+function adjustTimeLimit(daySelect) {
+  const timeInput = daySelect.nextElementSibling;
+  timeInput.min = "00:00";
+  timeInput.max = "23:59";
+}
+
+    const form = document.getElementById('form');
+    const status = document.getElementById('statusMessage');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      status.textContent = "Sending...";
+
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(text => {
+        if (text.trim() === "Success") {
+          status.innerHTML = `
+            🌟 Thank you for your interest in enrolling your child in our academy! We’re thrilled to have you join us, and someone from our team will follow up with you shortly. 😊<br><br>
+            <a href="index.html" style="color: #00bfff; font-weight: bold;">Go Back to Homepage</a>
+          `;
+          form.reset();
+        } else {
+          status.textContent = "❌ Something went wrong. Please try again.";
+        }
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        status.textContent = "❌ Something went wrong. Please try again.";
+      });
+    });
+  </script>
+</body>
+</html>
