@@ -1,153 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us - DMV4Tech</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f9f9f9;
-      padding: 2rem;
-      color: #333;
-    }
+<!-- Simple Contact Form -->
+<form id="contactForm" style="max-width: 500px; margin: auto; padding: 1rem; background: #f0f8ff; border-radius: 8px;">
+  <h2>Contact DMV4Tech Academy</h2>
+  <label for="name">Name:</label><br>
+  <input type="text" name="name" required style="width: 100%; padding: 8px; margin-bottom: 10px;" /><br>
 
-    h1 {
-      text-align: center;
-      color: #1a1a1a;
-      margin-bottom: 1rem;
-    }
+  <label for="email">Email:</label><br>
+  <input type="email" name="email" required style="width: 100%; padding: 8px; margin-bottom: 10px;" /><br>
 
-    p.intro {
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 1.1rem;
-      color: #555;
-    }
+  <label for="message">Message:</label><br>
+  <textarea name="message" required rows="4" style="width: 100%; padding: 8px; margin-bottom: 10px;"></textarea><br>
 
-    .contact-btn {
-      display: block;
-      width: 250px;
-      margin: 3rem auto;
-      padding: 1rem 2rem;
-      background-color: #007BFF;
-      color: white;
-      text-align: center;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
+  <button type="submit" style="padding: 10px 20px; background-color: #00bfff; color: white; border: none; border-radius: 6px; font-weight: bold;">Submit</button>
+</form>
 
-    .contact-btn:hover {
-      background-color: #0056b3;
-      transform: translateY(-2px);
-    }
+<!-- Submission Status Message -->
+<p id="statusMessage" style="text-align: center; margin-top: 1rem;"></p>
 
-    .home-btn {
-      display: block;
-      width: fit-content;
-      margin: 2rem auto 0;
-      padding: 0.6rem 1.2rem;
-      background-color: #6c757d;
-      color: white;
-      font-size: 0.95rem;
-      text-align: center;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+<!-- KEEP the same HTML form as before -->
+<script>
+  const scriptURL = "https://script.google.com/macros/s/AKfycbzcA0A_UMLGPMMhNGIZwF8oBoGzRTL9Tp3mO6XInFa19aDy6nXMLGgHgr2llrIs5pM/exec";
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('statusMessage');
 
-    .home-btn:hover {
-      background-color: #5a6268;
-    }
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    status.textContent = "Sending...";
 
-    .thank-you {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background: linear-gradient(to right, #e6ffed, #ffffff);
-      color: #2f855a;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-      box-sizing: border-box;
-      animation: fadeIn 0.5s ease-in-out;
-      z-index: 999;
-    }
+    const formData = new FormData(form);
 
-    .thank-you h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .thank-you p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      max-width: 600px;
-    }
-
-    .thank-you a {
-      padding: 0.75rem 1.75rem;
-      background-color: #007BFF;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
-      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .thank-you a:hover {
-      background-color: #0056b3;
-      transform: translateY(-2px);
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.98); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    @media (max-width: 768px) {
-      .thank-you h2 {
-        font-size: 1.5rem;
+    fetch(scriptURL, {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      if (response.ok) {
+        status.textContent = "✅ Thank you! Your message has been submitted.";
+        form.reset();
+      } else {
+        status.textContent = "❌ Something went wrong. Please try again.";
       }
-      .thank-you p {
-        font-size: 1rem;
-      }
-    }
-  </style>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const thankYou = document.querySelector('.thank-you');
-      const urlParams = new URLSearchParams(window.location.search);
-
-      if (urlParams.get("success") === "true") {
-        thankYou.style.display = 'flex';
-      }
+    })
+    .catch(error => {
+      console.error('Error!', error.message);
+      status.textContent = "❌ Something went wrong. Please try again.";
     });
-  </script>
-</head>
-<body>
+  });
+</script>
 
-  <h1>Let’s Connect!</h1>
-  <p class="intro">Have a question, feedback, or collaboration idea? We would love to hear from you!</p>
-
-  <!-- Contact Button to Open Google Form -->
-  <button class="contact-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScBsdanaBlOmhmPY7Gn87lTht8VAT7buJ8hT4BkYagRxAiiaA/viewform?usp=header', '_blank')">Click here</button>
-
-  <!-- Small Home Button at Bottom -->
-  <button class="home-btn" onclick="window.location.href='https://dmv4tech.com/index.html'">⬅️ Back to Home</button>
-
-</body>
-</html>
