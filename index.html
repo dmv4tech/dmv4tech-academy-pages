@@ -3,395 +3,206 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DMV Scholars Academy | DMV Tutoring + Test Prep + Kids Coding</title>
-  <meta name="description" content="DMV tutoring and test prep in DC, Maryland, and Virginia: PSAT, SAT, ACT, AP (Calc, Bio, Chem, English), and MCAT. Plus kids coding classes (Scratch, Python, Robotics, AI). Online + select in-person." />
+  <title>DMV Scholars Academy | Homework Help & Test Prep (DMV)</title>
+  <meta name="description" content="Math (6–12), Science (7–12), SAT/ACT test prep, plus Scratch coding for elementary students. Serving DC, Maryland, and Virginia." />
   <style>
-    html, body { height: 100%; margin: 0; padding: 0; scroll-behavior: smooth; }
-    body {
-      display: flex; flex-direction: column; min-height: 100vh;
+    :root{
+      --blue:#00bfff;
+      --orange:#ffa500;
+      --light:#f0f8ff;
+      --white:#fff;
+      --text:#222;
+      --muted:#555;
+    }
+    html,body{height:100%;margin:0;padding:0;scroll-behavior:smooth;}
+    body{
       font-family: Arial, Helvetica, sans-serif;
-      background: #f0f8ff; color: #222; line-height: 1.6; font-size: 16px;
+      background:var(--light);
+      color:var(--text);
+      line-height:1.6;
+      display:flex;
+      flex-direction:column;
+      min-height:100vh;
     }
-    .content { flex: 1; }
-
-    header {
-      background-color: #00bfff;
-      padding: 25px 20px;
-      text-align: center;
-      color: white;
+    header{
+      background:var(--blue);
+      color:#fff;
+      padding:28px 18px;
+      text-align:center;
     }
-    header h1 { margin: 0; font-size: 2.2em; }
-    header p { margin: 10px 0 0; font-size: 1.1em; opacity: 0.95; }
-
-    nav {
-      background: #ffa500;
-      display: flex;
-      justify-content: center;
-      padding: 10px 0;
-      flex-wrap: wrap;
+    header h1{margin:0;font-size:2.2em;}
+    header p{margin:10px 0 0;opacity:0.95;font-size:1.1em;}
+    nav{
+      background:var(--orange);
+      display:flex;
+      justify-content:center;
+      gap: 8px 18px;
+      flex-wrap:wrap;
+      padding:10px 12px;
     }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 8px 16px;
-      font-weight: bold;
-      font-size: 1em;
+    nav a{color:#fff;text-decoration:none;font-weight:bold;}
+    nav a:hover{text-decoration:underline;}
+    .content{flex:1;}
+    section{max-width:1100px;margin:0 auto;padding:28px 16px;}
+    .hero{
+      background:#fffacd;
+      border-radius:16px;
+      padding:22px 18px;
+      text-align:center;
+      box-shadow:2px 2px 10px rgba(0,0,0,0.08);
     }
-    nav a:hover { text-decoration: underline; }
-
-    .hero {
-      text-align: center;
-      padding: 30px 20px 18px;
-      background: #fffacd;
+    .hero h2{margin:0 0 8px;font-size:1.7em;}
+    .hero p{margin:0;color:var(--muted);}
+    .cta-row{
+      margin-top:14px;
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
     }
-    .hero h2 { font-size: 2em; margin: 0 0 10px; }
-    .hero p { font-size: 1.1em; max-width: 850px; margin: 0 auto 12px; }
-
-    .chips {
-      display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
-      max-width: 900px; margin: 0 auto;
+    .btn{
+      display:inline-block;
+      background:var(--blue);
+      color:#fff;
+      text-decoration:none;
+      padding:12px 16px;
+      border-radius:10px;
+      font-weight:bold;
     }
-    .chip {
-      background: #ffffff;
-      border: 1px solid rgba(0,0,0,0.08);
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 13px;
+    .btn.secondary{background:#e0f7ff;color:#0b3b52;}
+    h2.section-title{text-align:center;margin:0 0 14px;}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
     }
-
-    .interest-button {
-      text-align: center;
-      padding: 26px 10px;
-      background-color: #fff8dc;
+    .card{
+      background:var(--white);
+      border-radius:14px;
+      padding:18px 16px;
+      box-shadow:2px 2px 10px rgba(0,0,0,0.08);
     }
-    .interest-button a {
-      background-color: #ffa500;
-      color: white;
-      padding: 10px 24px;
-      font-size: 1em;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      transition: background-color 0.2s ease;
+    .card h3{margin:0 0 8px;}
+    .card p{margin:0;color:var(--muted);}
+    .tag{
+      display:inline-block;
+      margin-top:10px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#f1f7ff;
+      border:1px solid rgba(0,0,0,0.08);
+      font-size:13px;
+      color:#0b3b52;
     }
-    .interest-button a:hover { background-color: #ff8c00; }
-    .interest-note {
-      margin-top: 10px;
-      font-size: 0.95em;
-      color: #444;
-      max-width: 820px;
-      margin-left: auto;
-      margin-right: auto;
+    footer{
+      background:var(--blue);
+      color:#fff;
+      text-align:center;
+      padding:18px;
+      font-size:0.95em;
     }
-
-    .section {
-      padding: 30px 22px;
-    }
-    .section h2 {
-      text-align: center;
-      font-size: 1.9em;
-      margin: 0 0 8px;
-    }
-    .section .sub {
-      text-align: center;
-      max-width: 900px;
-      margin: 0 auto 18px;
-      color: #444;
-      font-size: 1.05em;
-    }
-
-    .courses, .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      padding: 0;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .course, .card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .course h3, .card h3 { margin-top: 0; font-size: 1.3em; }
-    .course h3 a, .card h3 a { text-decoration: none; color: #333; }
-    .course h3 a:hover, .card h3 a:hover { text-decoration: underline; }
-    .course p, .card p { font-size: 0.98em; margin: 0 0 10px; color: #333; }
-    .card ul { margin: 0; padding-left: 18px; color: #444; }
-    .card li { margin: 6px 0; }
-
-    .dmv-band {
-      background: #e6f7ff;
-      border-top: 1px solid rgba(0,0,0,0.06);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    @media (max-width: 820px) {
-      .two-col { grid-template-columns: 1fr; }
-    }
-
-    .pricing table {
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-      border-collapse: separate;
-      border-spacing: 0 10px;
-    }
-    .pricing td {
-      background: #fff;
-      border: 1px solid rgba(0,0,0,0.08);
-      padding: 12px;
-      vertical-align: top;
-    }
-    .pricing tr td:first-child {
-      border-top-left-radius: 10px;
-      border-bottom-left-radius: 10px;
-      width: 22%;
-    }
-    .pricing tr td:last-child {
-      border-top-right-radius: 10px;
-      border-bottom-right-radius: 10px;
-      width: 18%;
-      text-align: right;
-      white-space: nowrap;
-      font-weight: bold;
-    }
-
-    .fineprint {
-      max-width: 1100px;
-      margin: 10px auto 0;
-      color: #444;
-      font-size: 0.92em;
-      padding: 0 2px;
-    }
-
-    footer {
-      text-align: center;
-      background: #00bfff;
-      color: white;
-      padding: 20px;
-      font-size: 0.95em;
-    }
-    footer a { color: white; text-decoration: underline; }
+    footer a{color:#fff;text-decoration:underline;}
   </style>
 </head>
 
 <body>
+  <header>
+    <h1>DMV Scholars Academy</h1>
+    <p>Homework Help & Test Prep for Students in DC • Maryland • Virginia</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="#services">Services</a>
+    <a href="#testprep">Test Prep</a>
+    <a href="#scratch">Scratch</a>
+    <a href="#pricing">Pricing</a>
+    <a href="waitlist.html">Get Started</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
   <div class="content">
-    <header>
-      <h1>DMV Scholars Academy</h1>
-      <p>DMV tutoring + test prep (PSAT/SAT/ACT/AP/MCAT) — plus kids coding classes</p>
-    </header>
-
-    <nav>
-      <a href="#">Home</a>
-      <a href="#testprep">Test Prep</a>
-      <a href="#dmv">DMV Area</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#courses">Coding Courses</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-
-    <section class="hero">
-      <h2>DC • Maryland • Virginia (DMV) Tutoring & Test Prep</h2>
-      <p>
-        We help students build confidence and results through structured tutoring and test prep:
-        <strong>PSAT, SAT, ACT, AP</strong> (Calc, Bio, Chem, English) and <strong>MCAT</strong>.
-        Online across the DMV, with select in-person options.
-      </p>
-      <div class="chips">
-        <span class="chip">PSAT (National Merit)</span>
-        <span class="chip">SAT / ACT</span>
-        <span class="chip">AP STEM + English</span>
-        <span class="chip">MCAT (Premium)</span>
-        <span class="chip">Homework + Foundations</span>
-      </div>
-    </section>
-
-    <section class="interest-button">
-      <a href="waitlist.html">✨ Book a Free 15-Min Call / Join the Waitlist</a>
-      <p class="interest-note">
-        Tell us your grade, school system (MCPS/PGCPS/DCPS/FCPS/etc.), test date, and target score.
-        We’ll recommend the best plan and schedule.
-      </p>
-    </section>
-
-    <!-- TEST PREP -->
-    <section class="section dmv-band" id="testprep">
-      <h2>Test Prep Programs (High Demand in the DMV)</h2>
-      <p class="sub">
-        Built for MCPS, PGCPS, DCPS/charters, FCPS, Arlington, Alexandria, and private schools.
-        Every plan includes a diagnostic, weekly schedule, and progress tracking.
-      </p>
-
-      <div class="cards-grid">
-        <div class="card">
-          <h3>Middle School (Grades 6–8)</h3>
-          <p>Foundations + acceleration (especially for advanced math tracks).</p>
-          <ul>
-            <li>Math acceleration: pre-algebra → Algebra I readiness</li>
-            <li>ELA: reading comprehension + writing structure</li>
-            <li>Study skills + confidence building</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>PSAT (National Merit Track)</h3>
-          <p>Strategy + targeted practice for 10th–11th graders.</p>
-          <ul>
-            <li>Section diagnostics (Math, Reading, Writing)</li>
-            <li>High-yield skill repair + timing strategies</li>
-            <li>Weekly timed sets + error-log review</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>SAT / ACT Score Growth</h3>
-          <p>Personalized plan for consistent score improvement.</p>
-          <ul>
-            <li>Baseline test + score-growth roadmap</li>
-            <li>Concept mastery + timed drills</li>
-            <li>Practice tests + review protocol</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>AP Support (STEM + English)</h3>
-          <p>Grades + exam performance (unit-by-unit).</p>
-          <ul>
-            <li>AP Calc AB/BC, Bio, Chem, English Lang</li>
-            <li>FRQ practice + pacing strategy</li>
-            <li>Exam review plan + mock tests</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>MCAT (Pre-Med)</h3>
-          <p>High-accountability prep for college students.</p>
-          <ul>
-            <li>Study plan + structured content review</li>
-            <li>Passage strategy + weak area repair</li>
-            <li>Testing cadence + score tracking</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Online + In-Person Options</h3>
-          <p>Choose what fits your schedule and location.</p>
-          <ul>
-            <li>Online tutoring across the DMV</li>
-            <li>In-person options (location-based availability)</li>
-            <li>1:1 or small groups (best value)</li>
-          </ul>
+    <section>
+      <div class="hero">
+        <h2>Reliable support for homework, grades, and exams</h2>
+        <p>
+          We focus on what DMV families demand most: <strong>Math</strong>, <strong>Science</strong>, and
+          <strong>SAT/ACT test prep</strong> for middle and high school students — plus <strong>Scratch coding</strong>
+          for elementary learners.
+        </p>
+        <div class="cta-row">
+          <a class="btn" href="waitlist.html">Join the Waitlist</a>
+          <a class="btn secondary" href="contact.html">Ask a Question</a>
         </div>
       </div>
     </section>
 
-    <!-- DMV COVERAGE -->
-    <section class="section" id="dmv">
-      <h2>DMV Coverage</h2>
-      <p class="sub">Online across the DMV. In-person availability depends on your location and schedule.</p>
-
-      <div class="two-col">
+    <section id="services">
+      <h2 class="section-title">Core Services</h2>
+      <div class="grid">
         <div class="card">
-          <h3>Maryland</h3>
-          <ul>
-            <li>Montgomery County (MCPS)</li>
-            <li>Prince George’s County (PGCPS)</li>
-            <li>Frederick / Howard (by availability)</li>
-          </ul>
+          <h3>📘 Math Tutoring</h3>
+          <p>Grades 6–12 • Algebra to Calculus • Homework help + concept mastery.</p>
+          <div class="tag"><a href="page2.html" style="color:#0b3b52;text-decoration:none;font-weight:bold;">View details →</a></div>
         </div>
+
         <div class="card">
-          <h3>Washington, DC + Virginia</h3>
-          <ul>
-            <li>DC Public Schools (DCPS) + charters</li>
-            <li>Fairfax County (FCPS)</li>
-            <li>Arlington (APS), Alexandria (ACPS)</li>
-          </ul>
+          <h3>🔬 Science Tutoring</h3>
+          <p>Grades 7–12 • Biology, Chemistry, Physics • Step-by-step problem solving.</p>
+          <div class="tag"><a href="page3.html" style="color:#0b3b52;text-decoration:none;font-weight:bold;">View details →</a></div>
+        </div>
+
+        <div class="card">
+          <h3>📝 Homework Help</h3>
+          <p>Ongoing weekly support to finish assignments correctly and build confidence.</p>
+          <div class="tag">Best for busy families</div>
         </div>
       </div>
     </section>
 
-    <!-- PRICING (UPDATED TO DMV MARKET RANGES) -->
-    <section class="section pricing dmv-band" id="pricing">
-      <h2>Pricing (DMV Market Ranges)</h2>
-      <p class="sub">
-        Transparent ranges aligned with common DMV tutoring and test prep pricing.
-        Final rate depends on grade level, subject difficulty, and format (1:1 vs group; online vs in-person).
-      </p>
-
-      <table aria-label="Pricing tiers">
-        <tr>
-          <td><strong>Starter</strong><br/><small>Homework + Foundations</small></td>
-          <td>Middle school Math/ELA, homework support, foundational skill building.</td>
-          <td>$45–$65/hr</td>
-        </tr>
-        <tr>
-          <td><strong>Test Prep Standard</strong><br/><small>PSAT / SAT / ACT</small></td>
-          <td>Diagnostic + weekly plan, timed drills, error-log review, practice cadence.</td>
-          <td>$75–$110/hr</td>
-        </tr>
-        <tr>
-          <td><strong>Premium</strong><br/><small>AP / MCAT</small></td>
-          <td>High-stakes prep, FRQs/passages, mock exams, accountability tracking.</td>
-          <td>$110–$180/hr</td>
-        </tr>
-        <tr>
-          <td><strong>Small Group</strong><br/><small>Best value</small></td>
-          <td>PSAT/SAT group sessions (3–8 students). Includes structured homework plan.</td>
-          <td>$30–$55/hr<br/><small>(per student)</small></td>
-        </tr>
-      </table>
-
-      <p class="fineprint">
-        Notes: In-person sessions may include a travel premium. Group programs can be offered as multi-week packages.
-        Ask for current openings and recommended plan during your free call.
-      </p>
-    </section>
-
-    <!-- CODING COURSES (YOUR ORIGINAL SECTION) -->
-    <section class="section" id="courses" style="background:#e6f7ff;">
-      <h2>Kids Coding Courses (Ages 6–14)</h2>
-      <p class="sub">We also teach coding through fun projects using Scratch, Python, Robotics, and beginner AI/ML.</p>
-
-      <div class="courses">
-        <div class="course">
-          <h3><a href="page1.html">Scratch Programming</a></h3>
-          <p>Build your own games and animations with colorful blocks — perfect for young minds!</p>
+    <section id="testprep">
+      <h2 class="section-title">SAT / ACT Test Prep</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>🎯 SAT Prep</h3>
+          <p>Targeted practice, strategy, and pacing improvements with progress checkpoints.</p>
+          <div class="tag"><a href="page4.html" style="color:#0b3b52;text-decoration:none;font-weight:bold;">View details →</a></div>
         </div>
-
-        <div class="course">
-          <h3><a href="page2.html">Python for Kids</a></h3>
-          <p>Start real-world coding with easy-to-learn Python basics in a kid-friendly environment.</p>
+        <div class="card">
+          <h3>🎯 ACT Prep</h3>
+          <p>Structured practice for Math + English/Reading with timed drills and review.</p>
+          <div class="tag"><a href="page4.html" style="color:#0b3b52;text-decoration:none;font-weight:bold;">View details →</a></div>
         </div>
-
-        <div class="course">
-          <h3><a href="page3.html">Robotics & Coding</a></h3>
-          <p>Combine programming with robotics kits to make fun, interactive gadgets!</p>
-        </div>
-
-        <div class="course">
-          <h3><a href="page4.html">Intro to AI & ML</a></h3>
-          <p>Get introduced to smart technology, from image recognition to beginner-friendly AI projects!</p>
+        <div class="card">
+          <h3>📅 Exam-Week Support</h3>
+          <p>Short-term help for midterms, finals, and unit tests when deadlines are tight.</p>
+          <div class="tag">Limited slots</div>
         </div>
       </div>
     </section>
+
+    <section id="scratch">
+      <h2 class="section-title">Scratch Coding (Elementary)</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>🎮 Scratch Coding Club</h3>
+          <p>Grades 3–5 • Build games, stories, and animations • Beginner-friendly.</p>
+          <div class="tag"><a href="page1.html" style="color:#0b3b52;text-decoration:none;font-weight:bold;">View details →</a></div>
+        </div>
+        <div class="card">
+          <h3>🧠 Skills Built</h3>
+          <p>Logic, sequencing, creativity, and confidence — all through hands-on projects.</p>
+          <div class="tag">No experience needed</div>
+        </div>
+      </div>
+    </section>
+
+
   </div>
 
-  <footer id="contact">
+  <footer>
     <p>
-      Contact us:
+      Contact:
       <a href="mailto:dmv4tech@gmail.com">dmv4tech@gmail.com</a> |
       Phone: <a href="tel:+12408836564">+1 240-883-6564</a>
     </p>

@@ -3,171 +3,209 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact DMV4Tech Academy</title>
+  <title>Contact | DMV Scholars Academy</title>
+  <meta name="description" content="Contact DMV Scholars Academy for Math, Science, SAT/ACT tutoring, homework help, and Scratch coding for students in the DMV." />
   <style>
+    :root {
+      --blue:#00bfff;
+      --orange:#ffa500;
+      --light:#f0f8ff;
+      --white:#fff;
+      --text:#222;
+      --muted:#555;
+      --danger:#b00020;
+      --success:#0a7a2f;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f0f2f5;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
       margin: 0;
-      padding: 2rem;
-      color: #333;
+      color: var(--text);
     }
 
-    .top-nav {
+    header {
+      background: var(--blue);
+      color: #fff;
+      padding: 22px 18px;
       text-align: center;
-      margin-bottom: 1.5rem;
     }
+    header h1 { margin: 0; font-size: 2em; }
+    header p { margin: 8px 0 0; opacity: 0.95; }
 
-    .top-nav a {
-      text-decoration: none;
-      color: #007BFF;
-      font-weight: bold;
-      font-size: 1rem;
+    nav {
+      background: var(--orange);
+      display:flex;
+      justify-content:center;
+      gap: 8px 18px;
+      flex-wrap:wrap;
+      padding: 10px 12px;
     }
-
-    .top-nav a:hover {
-      text-decoration: underline;
+    nav a {
+      color:#fff;
+      text-decoration:none;
+      font-weight:bold;
     }
+    nav a:hover { text-decoration: underline; }
 
-    h2 {
-      text-align: center;
-      color: #007BFF;
+    .wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 18px 14px 34px;
     }
 
     form {
-      max-width: 500px;
-      margin: auto;
-      padding: 1.5rem;
-      background: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      background: var(--white);
+      border-radius: 14px;
+      padding: 20px 18px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      margin: 0 0 6px;
+      text-align: center;
+    }
+    .sub {
+      text-align:center;
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    label {
+      display:block;
+      margin: 10px 0 6px;
+      font-weight: bold;
     }
 
     input, textarea {
       width: 100%;
       padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,0.2);
+      border-radius: 10px;
       font-size: 1rem;
+      box-sizing: border-box;
     }
 
     button {
-      padding: 12px 20px;
-      background-color: #00bfff;
-      color: white;
+      margin-top: 14px;
+      padding: 12px 16px;
+      background: var(--blue);
+      color: #fff;
       border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      font-size: 1rem;
+      border-radius: 10px;
       cursor: pointer;
-      width: 100%;
-    }
-
-    button:hover {
-      background-color: #009acd;
+      font-weight: bold;
     }
 
     #statusMessage {
-      max-width: 500px;
-      margin: 1.5rem auto;
+      max-width: 600px;
+      margin: 14px auto 0;
+      padding: 10px 12px;
+      border-radius: 10px;
       text-align: center;
-      font-size: 1.05rem;
-      padding: 1rem;
-      border-radius: 8px;
       display: none;
+      font-weight: bold;
     }
 
     #statusMessage.success {
-      background-color: #e6ffed;
-      color: #2f855a;
-      border: 1px solid #b5e7c4;
+      display: block;
+      background: #e9f7ef;
+      color: var(--success);
+      border: 1px solid rgba(10,122,47,0.2);
     }
 
     #statusMessage.error {
-      background-color: #ffe6e6;
-      color: #d9534f;
-      border: 1px solid #f5c6cb;
+      display: block;
+      background: #fdecec;
+      color: var(--danger);
+      border: 1px solid rgba(176,0,32,0.2);
     }
 
-    .back-home-btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 10px 18px;
-      background-color: #007BFF;
-      color: white;
-      border-radius: 6px;
-      font-weight: bold;
-      text-decoration: none;
+    footer {
+      text-align:center;
+      background: var(--blue);
+      color:#fff;
+      padding: 18px;
+      font-size: 0.95em;
+      margin-top: 26px;
     }
-
-    .back-home-btn:hover {
-      background-color: #0056b3;
-    }
+    footer a { color:#fff; text-decoration: underline; }
   </style>
 </head>
 <body>
 
-  <!-- Top Back Navigation -->
-  <div class="top-nav">
-    <a href="index.html">⬅ Back to Home</a>
+  <header>
+    <h1>Contact DMV Scholars Academy</h1>
+    <p>Homework Help & Test Prep for Students in the DMV</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#testprep">Test Prep</a>
+    <a href="index.html#scratch">Scratch</a>
+    <a href="waitlist.html">Get Started</a>
+  </nav>
+
+  <div class="wrap">
+    <form id="contactForm">
+      <h2>Send us a message</h2>
+      <p class="sub">Questions about Math, Science, SAT/ACT, Homework Help, or Scratch? Contact us here.</p>
+
+      <label for="name">Name</label>
+      <input id="name" type="text" name="name" required />
+
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit" id="submitBtn">Submit</button>
+    </form>
+
+    <div id="statusMessage"></div>
   </div>
 
-  <!-- Contact Form -->
-  <form id="contactForm">
-    <h2>Contact DMV4Tech Academy</h2>
+  <footer>
+    <p>
+      Email: <a href="mailto:dmv4tech@gmail.com">dmv4tech@gmail.com</a> |
+      Phone: <a href="tel:+12408836564">+1 240-883-6564</a>
+    </p>
+    <p>© 2025 DMV Scholars Academy</p>
+  </footer>
 
-    <label>Name:</label>
-    <input type="text" name="name" required />
-
-    <label>Email:</label>
-    <input type="email" name="email" required />
-
-    <label>Message:</label>
-    <textarea name="message" rows="4" required></textarea>
-
-    <button type="submit">Submit</button>
-  </form>
-
-  <!-- Submission Status -->
-  <div id="statusMessage"></div>
-
-  <!-- Script -->
   <script>
     const scriptURL = "https://script.google.com/macros/s/AKfycbw2bdSt--yu33wuusZiUagGlq52gbFiWDlUVM9-WtaP-vQGiBN_XELIP6HaqTD5h9M/exec";
     const form = document.getElementById('contactForm');
     const status = document.getElementById('statusMessage');
+    const submitBtn = document.getElementById('submitBtn');
 
     form.addEventListener('submit', e => {
       e.preventDefault();
-      status.textContent = "⏳ Sending your message...";
+      status.textContent = "Sending...";
       status.className = '';
       status.style.display = 'block';
+      submitBtn.disabled = true;
 
-      const formData = new FormData(form);
-
-      fetch(scriptURL, {
-        method: 'POST',
-        body: formData
-      })
-      .then(response => {
-        if (response.ok) {
-          status.innerHTML = `
-            <strong>✅ Thank you for contacting DMV4Tech Academy!</strong><br/><br/>
-            We’ve received your message and will follow up shortly.<br/><br/>
-            <a href="index.html" class="back-home-btn">⬅ Go Back to Home</a>
-          `;
-          status.className = 'success';
-          form.reset();
-        } else {
-          status.textContent = "❌ Something went wrong. Please try again.";
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+          if (response.ok) {
+            status.textContent = "Message sent. We will respond shortly.";
+            status.className = 'success';
+            form.reset();
+          } else {
+            status.textContent = "Something went wrong. Please try again.";
+            status.className = 'error';
+          }
+        })
+        .catch(() => {
+          status.textContent = "Something went wrong. Please try again.";
           status.className = 'error';
-        }
-      })
-      .catch(error => {
-        status.textContent = "❌ Something went wrong. Please try again.";
-        status.className = 'error';
-      });
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+        });
     });
   </script>
 

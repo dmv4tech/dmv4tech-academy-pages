@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Intro to AI & Machine Learning - DMV Scholars Academy</title>
+  <title>SAT / ACT Prep | DMV Scholars Academy</title>
+  <meta name="description" content="SAT / ACT Test Prep for DMV students. Grades 10–12." />
   <style>
     :root {
       --blue: #00bfff;
@@ -11,174 +12,134 @@
       --light-bg: #f0f8ff;
       --white: #fff;
       --text-dark: #222;
-      --text-light: #666;
+      --text-light: #555;
     }
-
+    html, body { margin:0; padding:0; scroll-behavior:smooth; }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background: var(--light-bg);
-      margin: 0;
-      padding: 0;
       color: var(--text-dark);
-      line-height: 1.7;
+      line-height: 1.6;
       font-size: 16px;
     }
-
     header {
-      background-color: var(--blue);
-      padding: 30px 20px 20px;
+      background: var(--blue);
+      color: #fff;
+      padding: 22px 18px;
       text-align: center;
-      color: var(--white);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.4em;
-    }
-
-    header p {
-      margin: 8px 0 0;
-      font-size: 1.1em;
-    }
-
+    header h1 { margin:0; font-size: 2em; }
+    header p { margin:8px 0 0; opacity: 0.95; }
     nav {
       background: var(--orange);
-      display: flex;
-      justify-content: center;
-      padding: 12px 0;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      display:flex;
+      justify-content:center;
+      gap: 8px 18px;
+      flex-wrap: wrap;
+      padding: 10px 12px;
     }
-
     nav a {
-      color: var(--white);
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      font-size: 1em;
-      transition: opacity 0.2s ease;
+      color:#fff;
+      text-decoration:none;
+      font-weight:bold;
     }
-
-    nav a:hover {
-      opacity: 0.8;
+    nav a:hover { text-decoration: underline; }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 18px 14px 34px;
     }
-
-    .content {
+    .card {
       background: var(--white);
-      max-width: 960px;
-      margin: 30px auto;
-      padding: 40px 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      text-align: center;
+      border-radius: 14px;
+      padding: 20px 18px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.08);
+      margin-top: 16px;
     }
-
-    h2 {
-      color: var(--blue);
-      font-size: 1.8em;
-      margin-bottom: 20px;
+    .kicker {
+      display:inline-block;
+      background: #e6f7ff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 13px;
+      color: #0b3b52;
+      margin-bottom: 10px;
     }
-
-    h3 {
-      color: var(--text-dark);
-      margin-top: 30px;
-      font-size: 1.3em;
+    ul { margin: 10px 0 0 18px; }
+    .cta {
+      margin-top: 16px;
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
     }
-
-    p {
-      margin-bottom: 12px;
-      color: var(--text-dark);
-    }
-
-    ul {
-      margin-top: 10px;
-      display: inline-block;
-      text-align: left;
-      padding-left: 20px;
-    }
-
-    ul li {
-      margin-bottom: 8px;
-    }
-
-    a {
-      color: var(--blue);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
+    .btn {
+      display:inline-block;
       background: var(--blue);
-      color: var(--white);
-      text-align: center;
-      padding: 20px;
+      color:#fff;
+      text-decoration:none;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+    .btn.secondary {
+      background: #e0f7ff;
+      color: #0b3b52;
+    }
+    footer {
+      text-align:center;
+      background: var(--blue);
+      color:#fff;
+      padding: 18px;
       font-size: 0.95em;
-      margin-top: 60px;
+      margin-top: 26px;
     }
-
-    footer a {
-      color: var(--white);
-      text-decoration: underline;
-    }
-
-    @media screen and (max-width: 600px) {
-      .content {
-        padding: 25px 20px;
-      }
-
-      header h1 {
-        font-size: 2em;
-      }
-
-      nav {
-        flex-direction: column;
-      }
-
-      nav a {
-        margin: 8px 0;
-      }
-
-      .content {
-        margin-top: 10px;
-      }
-    }
+    footer a { color: #fff; text-decoration: underline; }
   </style>
 </head>
 <body>
-
   <header>
     <h1>DMV Scholars Academy</h1>
-    <p>Explore the Future: AI & Machine Learning for Kids</p>
+    <p>Homework Help & Test Prep for Students in the DMV</p>
   </header>
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="index.html#courses">Courses</a>
-    <a href="#contact">Contact</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#testprep">Test Prep</a>
+    <a href="index.html#scratch">Scratch</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="waitlist.html">Get Started</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
-  <div class="content">
-    <h2>Intro to AI & Machine Learning</h2>
-    <p>Artificial Intelligence (AI) and Machine Learning (ML) are shaping the world around us — from voice assistants to self-driving cars. At DMV4Tech, we simplify these exciting technologies for young minds!</p>
+  <div class="wrap">
+    <div class="card">
+      <div class="kicker">Grades 10–12</div>
+      <h2 style="margin:0 0 8px;">SAT / ACT Test Prep</h2>
+      <p style="margin:0; color: var(--text-light);">
+        Clear explanations, step-by-step support, and consistent progress tracking.
+      </p>
 
-    <h3>What Kids Will Learn:</h3>
-    <ul>
-      <li>What is AI and how it works</li>
-      <li>Fun projects like teaching a computer to recognize animals</li>
-      <li>Basic logic and pattern recognition</li>
-      <li>Interactive games and hands-on AI tools like Google's Teachable Machine</li>
-    </ul>
+      <h3 style="margin:16px 0 8px;">What we cover</h3>
+      <ul>
+        <li>Targeted practice by weakness area (Math + Reading/English)</li><li>Timed strategies to improve accuracy and pacing</li><li>Full-length practice + review plans</li><li>Goal-based score plan and progress checkpoints</li>
+      </ul>
 
-    <p>This course sparks curiosity and encourages kids to think like data scientists and problem solvers — all in a fun and safe environment!</p>
+      <div class="cta">
+        <a class="btn" href="waitlist.html">Request a Test Prep Plan</a>
+        <a class="btn secondary" href="contact.html">Ask a question</a>
+      </div>
+    </div>
   </div>
 
-  <footer id="contact">
-    <p>Contact us: <a href="mailto:dmv4tech@gmail.com">dmv4tech@gmail.com</a> | Phone: <a href="tel:+12403088121">+1 240-308-8121</a></p>
+  <footer>
+    <p>
+      Contact us:
+      <a href="mailto:dmv4tech@gmail.com">dmv4tech@gmail.com</a> |
+      Phone: <a href="tel:+12408836564">+1 240-883-6564</a>
+    </p>
     <p>© 2025 DMV Scholars Academy</p>
   </footer>
-
 </body>
 </html>
