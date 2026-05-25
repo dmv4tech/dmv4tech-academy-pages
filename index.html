@@ -3,210 +3,101 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DMV Scholars Academy | Homework Help & Test Prep (DMV)</title>
-  <meta name="description" content="Math (6–12), Science (7–12), SAT/ACT test prep, plus Scratch coding for elementary students. Serving DC, Maryland, and Virginia." />
+  <title>Integra Flow Academy | Joyful Robotics & Coding</title>
+  <meta name="description" content="Welcome to Integra Flow Academy in Germantown, MD. We offer welcoming, hands-on robotics and programming Saturday camps for kids and teens." />
+
   <style>
     :root{
-      --blue:#00bfff;
-      --orange:#ffa500;
-      --light:#f0f8ff;
-      --white:#fff;
-      --text:#222;
-      --muted:#555;
+      --navy:#0A1F44;
+      --gold:#D4AF37;
+      --bg:#f6f8fc;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --border: rgba(15, 23, 42, 0.10);
+      --shadow: 0 10px 22px rgba(2, 6, 23, 0.08);
+      --radius: 16px;
     }
-    html,body{height:100%;margin:0;padding:0;scroll-behavior:smooth;}
-    body{
-      font-family: Arial, Helvetica, sans-serif;
-      background:var(--light);
-      color:var(--text);
-      line-height:1.6;
-      display:flex;
-      flex-direction:column;
-      min-height:100vh;
-    }
-    header{
-      background:var(--blue);
-      color:#fff;
-      padding:28px 18px;
-      text-align:center;
-    }
-    header h1{margin:0;font-size:2.2em;}
-    header p{margin:10px 0 0;opacity:0.95;font-size:1.1em;}
-    nav{
-      background:var(--orange);
-      display:flex;
-      justify-content:center;
-      gap: 8px 18px;
-      flex-wrap:wrap;
-      padding:10px 12px;
-    }
-    nav a{color:#fff;text-decoration:none;font-weight:bold;}
-    nav a:hover{text-decoration:underline;}
-    .content{flex:1;}
-    section{max-width:1100px;margin:0 auto;padding:28px 16px;}
-    .hero{
-      background:#fffacd;
-      border-radius:16px;
-      padding:22px 18px;
-      text-align:center;
-      box-shadow:2px 2px 10px rgba(0,0,0,0.08);
-    }
-    .hero h2{margin:0 0 8px;font-size:1.7em;}
-    .hero p{margin:0;color:var(--muted);}
-    .cta-row{
-      margin-top:14px;
-      display:flex;
-      justify-content:center;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-    .btn{
-      display:inline-block;
-      background:var(--blue);
-      color:#fff;
-      text-decoration:none;
-      padding:12px 16px;
-      border-radius:10px;
-      font-weight:bold;
-    }
-    .btn.secondary{background:#e0f7ff;color:#0b3b52;}
-    h2.section-title{text-align:center;margin:0 0 14px;}
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:18px;
-    }
-    .card{
-      background:var(--white);
-      border-radius:14px;
-      padding:18px 16px;
-      box-shadow:2px 2px 10px rgba(0,0,0,0.08);
-    }
-    .card h3{margin:0 0 8px;}
-    .card p{margin:0;color:var(--muted);}
-    .tag{
-      display:inline-block;
-      margin-top:10px;
-      padding:6px 10px;
-      border-radius:999px;
-      background:#f1f7ff;
-      border:1px solid rgba(0,0,0,0.08);
-      font-size:13px;
-      color:#0b3b52;
-    }
-    footer{
-      background:var(--blue);
-      color:#fff;
-      text-align:center;
-      padding:18px;
-      font-size:0.95em;
-    }
-    footer a{color:#fff;text-decoration:underline;}
+
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; padding:0; font-family: 'Segoe UI', Arial, sans-serif; }
+    body{ background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    header{ background: var(--navy); color:#fff; padding: 40px 18px; text-align:center; }
+    header h1{ margin:0; font-size: 2.5em; }
+    header p{ margin: 8px 0 0; font-size: 1.2em; opacity: 0.9; }
+
+    nav{ background: var(--gold); display:flex; justify-content:center; gap: 20px; padding: 12px; }
+    nav a{ color:#fff; text-decoration:none; font-weight:bold; }
+
+    .container{ max-width: 980px; margin: 0 auto; padding: 30px 16px; }
+    .card{ background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 25px; box-shadow: var(--shadow); margin-bottom: 20px; }
+    
+    .hero{ text-align:center; padding: 40px 20px; background: #fff; border-radius: var(--radius); border: 1px solid var(--border); }
+    .btn{ display:inline-block; padding: 15px 25px; border-radius: 10px; text-decoration:none; font-weight:bold; margin: 5px; }
+    .primary{ background: var(--navy); color:#fff; }
+    
+    .grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+    .mini{ background:#f8fafc; border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    .mini h4{ margin: 0 0 10px; color: var(--navy); font-size: 1.3em; }
+
+    footer{ margin-top: 40px; background: var(--navy); color:#fff; text-align:center; padding: 30px; font-size: 0.9em; }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>DMV Scholars Academy</h1>
-    <p>Homework Help & Test Prep for Students in DC • Maryland • Virginia</p>
+    <h1>Integra Flow Academy</h1>
+    <p>Inspiring Curiosity Through Code & Robotics in Germantown, MD</p>
   </header>
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="#services">Services</a>
-    <a href="#testprep">Test Prep</a>
-    <a href="#scratch">Scratch</a>
-    <a href="#pricing">Pricing</a>
-    <a href="waitlist.html">Get Started</a>
+    <a href="page4.html">Programs</a>
+    <a href="waitlist.html">Enroll</a>
     <a href="contact.html">Contact</a>
   </nav>
 
-  <div class="content">
-    <section>
-      <div class="hero">
-        <h2>Reliable support for homework, grades, and exams</h2>
-        <p>
-          We focus on what DMV families demand most: <strong>Math</strong>, <strong>Science</strong>, and
-          <strong>SAT/ACT test prep</strong> for middle and high school students — plus <strong>Scratch coding</strong>
-          for elementary learners.
-        </p>
-        <div class="cta-row">
-          <a class="btn" href="waitlist.html">Join the Waitlist</a>
-          <a class="btn secondary" href="contact.html">Ask a Question</a>
-        </div>
+  <div class="container">
+    <div class="hero">
+      <h2>Where Curiosity Meets Capability.</h2>
+      <p style="margin-top: 10px; color: var(--muted); font-size: 1.1em;">
+        Welcome to Integra Flow Academy! We provide a nurturing, professional space where children and teens explore the magic of robotics and the power of programming. We're here to help them build their path, one fun project at a time.
+      </p>
+      <div style="margin-top: 20px;">
+        <a class="btn primary" href="waitlist.html">Join Our Community</a>
       </div>
-    </section>
+    </div>
 
-    <section id="services">
-      <h2 class="section-title">Core Services</h2>
+    <div class="card">
+      <h3 style="color:var(--navy)">Our Welcoming Tracks</h3>
       <div class="grid">
-        <div class="card">
-          <h3>📘 Math Tutoring</h3>
-          <p>Grades 6–12 • Algebra to Calculus • Homework help + concept mastery.</p>
-          <div class="tag"><a href="page2.html" style="color:#0b3b52;text-decoration:none;font-weight:bold;">View details →</a></div>
+        <div class="mini">
+          <h4>🌟 Junior Explorers (Ages 5–8)</h4>
+          <p>A world of wonder and discovery! We swap screens for hands-on building, helping our youngest creators learn foundational coding logic and basic robotics through joyful play.</p>
         </div>
-
-        <div class="card">
-          <h3>🔬 Science Tutoring</h3>
-          <p>Grades 7–12 • Biology, Chemistry, Physics • Step-by-step problem solving.</p>
-          <div class="tag"><a href="page3.html" style="color:#0b3b52;text-decoration:none;font-weight:bold;">View details →</a></div>
-        </div>
-
-        <div class="card">
-          <h3>📝 Homework Help</h3>
-          <p>Ongoing weekly support to finish assignments correctly and build confidence.</p>
-          <div class="tag">Best for busy families</div>
+        <div class="mini">
+          <h4>💡 Senior Creators (High School)</h4>
+          <p>A collaborative bridge to the future. Teens dive into Python, C++, and advanced robotics in a supportive environment, learning to problem-solve, mentor, and lead with confidence.</p>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section id="testprep">
-      <h2 class="section-title">SAT / ACT Test Prep</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>🎯 SAT Prep</h3>
-          <p>Targeted practice, strategy, and pacing improvements with progress checkpoints.</p>
-          <div class="tag"><a href="page4.html" style="color:#0b3b52;text-decoration:none;font-weight:bold;">View details →</a></div>
-        </div>
-        <div class="card">
-          <h3>🎯 ACT Prep</h3>
-          <p>Structured practice for Math + English/Reading with timed drills and review.</p>
-          <div class="tag"><a href="page4.html" style="color:#0b3b52;text-decoration:none;font-weight:bold;">View details →</a></div>
-        </div>
-        <div class="card">
-          <h3>📅 Exam-Week Support</h3>
-          <p>Short-term help for midterms, finals, and unit tests when deadlines are tight.</p>
-          <div class="tag">Limited slots</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="scratch">
-      <h2 class="section-title">Scratch Coding (Elementary)</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>🎮 Scratch Coding Club</h3>
-          <p>Grades 3–5 • Build games, stories, and animations • Beginner-friendly.</p>
-          <div class="tag"><a href="page1.html" style="color:#0b3b52;text-decoration:none;font-weight:bold;">View details →</a></div>
-        </div>
-        <div class="card">
-          <h3>🧠 Skills Built</h3>
-          <p>Logic, sequencing, creativity, and confidence — all through hands-on projects.</p>
-          <div class="tag">No experience needed</div>
-        </div>
-      </div>
-    </section>
-
-
+    <div class="card">
+      <h3 style="color:var(--navy)">A Partnership in Learning</h3>
+      <p>At Integra Flow, we understand that every child learns differently. Founded by a parent and professional engineer, we believe technology is a creative language, and we are dedicated to helping every student find their voice.</p>
+      <ul>
+        <li><strong>A Supportive Community:</strong> We don't just teach code; we cultivate friendships. Our high school mentorship model ensures your child is always supported and inspired.</li>
+        <li><strong>Hands-On Fun:</strong> We use engaging tools like Arduino, Raspberry Pi, and interactive robots to bring ideas to life.</li>
+        <li><strong>Small, Caring Groups:</strong> We keep our Saturday camps small so every child gets the personal attention and encouragement they deserve.</li>
+      </ul>
+    </div>
   </div>
 
   <footer>
-    <p>
-      Contact:
-      <a href="mailto:dmv4tech@gmail.com">dmv4tech@gmail.com</a> |
-      Phone: <a href="tel:+12408836564">+1 240-883-6564</a>
-    </p>
-    <p>© 2025 DMV Scholars Academy</p>
+    <p>Serving Montgomery County, Maryland | Germantown Area</p>
+    <p>Email: <a href="mailto:info@integraflow.com" style="color:white">info@integraflow.com</a></p>
+    <p>&copy; 2026 Integra Flow LLC</p>
   </footer>
 </body>
 </html>
