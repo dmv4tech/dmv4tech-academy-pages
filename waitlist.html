@@ -3,142 +3,201 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Join Us | Integra Flow Academy</title>
-  <meta name="description" content="Register your interest for Integra Flow Academy's warm and welcoming robotics programs." />
-<style>
+  <title>Enrollment & Tutoring Request | Mr. Taye Math Tutoring</title>
+  <meta name="description" content="Register for 1:1 math tutoring with Mr. Taye. Serving Grades 1 through 12 in Montgomery County public libraries." />
+  <style>
     :root {
-      --blue:#0A1F44;
-      --orange:#D4AF37;
-      --light:#f6f7fb;
-      --white:#fff;
-      --text:#111827;
-      --muted:#4b5563;
-      --danger:#b00020;
-      --success:#0a7a2f;
+      --primary: #0A1F44;
+      --accent: #D4AF37;
+      --bg-light: #F4F7FA;
+      --card-bg: #FFFFFF;
+      --text: #1F2937;
+      --muted: #4B5563;
+      --success: #0A7A2F;
+      --danger: #B00020;
+      --radius: 12px;
     }
-    html,body{margin:0;padding:0;scroll-behavior:smooth;}
-    body { font-family: Arial, Helvetica, sans-serif; background: var(--light); color: var(--text); line-height: 1.6; min-height: 100vh; }
-    
-    header { background: var(--blue); color:#fff; padding: 26px 18px; text-align:center; }
-    header h1{margin:0;font-size:2.2em;}
-    header p{margin:10px 0 0;opacity:0.95;font-size:1.05em;}
-    
-    nav { background: var(--orange); display:flex; justify-content:center; gap: 10px 18px; flex-wrap:wrap; padding: 10px 12px; }
-    nav a { color:#0a1f44; text-decoration:none; font-weight:800; background: rgba(255,255,255,0.45); padding: 6px 10px; border-radius: 999px; }
-    
-    .wrap{max-width:920px;margin:0 auto;padding:18px 14px 34px;}
-    .card{background:var(--white);border-radius:14px;padding:20px 18px;box-shadow:2px 2px 10px rgba(0,0,0,0.08);}
-    .note{margin:0 0 14px;color:var(--muted); font-size: 1.1em;}
-    
-    form{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;}
-    label{font-weight:800;font-size:0.95em;}
-    input,select,textarea{width:100%;padding:10px;border:1px solid rgba(0,0,0,0.2);border-radius:10px;font-size:1rem;background:#fff;box-sizing:border-box;}
-    textarea{grid-column:1 / -1;resize:vertical;min-height:110px;}
-    .full{grid-column:1 / -1;}
-    .btnform{background:var(--blue);color:#fff;padding:12px 16px;border:none;border-radius:10px;font-weight:800;cursor:pointer;width:fit-content;}
-    .btnform:disabled{opacity:0.7;cursor:not-allowed;}
-    .status{margin-top:12px;font-weight:800;}
-    .status.success{color:var(--success);}
-    .status.error{color:var(--danger);}
-    @media (max-width:720px){form{grid-template-columns:1fr;}}
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background-color: var(--primary);
+      color: #FFF;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    header h1 { margin: 0 0 10px; font-size: 2.2rem; }
+    header p { margin: 0; opacity: 0.95; font-size: 1.05rem; }
+    nav {
+      background-color: var(--accent);
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      padding: 12px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.4);
+      transition: background 0.2s ease;
+    }
+    nav a:hover, nav a.active { background: #FFF; }
+    .wrap { max-width: 850px; margin: 30px auto; padding: 0 16px; }
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    .note { color: var(--muted); font-size: 1.05rem; margin-bottom: 24px; }
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+      display: block;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #D1D5DB;
+      border-radius: 8px;
+      font-size: 1rem;
+      background: #FFF;
+    }
+    textarea { grid-column: 1 / -1; min-height: 110px; resize: vertical; }
+    .full { grid-column: 1 / -1; }
+    .btn-submit {
+      background: var(--primary);
+      color: white;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-submit:hover { background: #153266; }
+    .btn-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+    .status { margin-top: 15px; font-weight: 700; display: none; padding: 12px; border-radius: 8px; }
+    .status.success { display: block; background: #E9F7EF; color: var(--success); }
+    .status.error { display: block; background: #FDECEC; color: var(--danger); }
+    @media (max-width: 650px) { form { grid-template-columns: 1fr; } }
+    footer {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
   </style>
 </head>
-
 <body>
+
   <header>
-    <h1>Let's Get Started!</h1>
-    <p>We are so excited to welcome your family.</p>
+    <h1>Tutoring Registration</h1>
+    <p>Request 1:1 Math Tutoring Sessions with Mr. Taye</p>
   </header>
 
-<nav>
+  <nav>
     <a href="index.html">Home</a>
-    <a href="page4.html">Programs</a>
-    <a href="waitlist.html">Enroll</a>
+    <a href="page1.html">Elementary (1–5)</a>
+    <a href="page2.html">Middle School (6–8)</a>
+    <a href="page3.html">High School (9–12)</a>
+    <a href="page4.html">Locations & Approach</a>
+    <a href="waitlist.html" class="active">Enrollment</a>
     <a href="contact.html">Contact</a>
-</nav>
+  </nav>
 
   <div class="wrap">
     <div class="card">
       <p class="note">
-        Every great journey starts with a simple hello! Please share a little bit about your child below. We will personally reach out to help find the perfect Saturday session for them.
+        Please fill out the form below to register your student. Mr. Taye will follow up directly to discuss schedule availability and coordinate convenient library location options.
       </p>
 
       <form id="waitlistForm">
         <div>
           <label for="parentName">Parent/Guardian Name</label>
-          <input id="parentName" name="Parent/Guardian Name" type="text" placeholder="Your name" required />
+          <input id="parentName" name="Parent/Guardian Name" type="text" placeholder="Your full name" required />
         </div>
 
         <div>
           <label for="studentName">Student's Name</label>
-          <input id="studentName" name="Student Name" type="text" placeholder="Their name" required />
+          <input id="studentName" name="Student Name" type="text" placeholder="Student's name" required />
         </div>
 
         <div>
-          <label for="email">Best Email to reach you</label>
-          <input id="email" name="Email" type="email" required />
+          <label for="email">Email Address</label>
+          <input id="email" name="Email" type="email" placeholder="email@example.com" required />
         </div>
 
         <div>
           <label for="phone">Phone Number</label>
-          <input id="phone" name="Phone" type="tel" placeholder="(###) ###-####" required />
+          <input id="phone" name="Phone" type="tel" placeholder="(301) 250-8174" required />
         </div>
 
         <div>
           <label for="grade">Student's Current Grade</label>
           <select id="grade" name="Student Grade" required>
-            <option value="" disabled selected>Select their grade</option>
-            <option>K</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
-            <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+            <option value="" disabled selected>Select grade level</option>
+            <option>Grade 1</option><option>Grade 2</option><option>Grade 3</option><option>Grade 4</option><option>Grade 5</option>
+            <option>Grade 6</option><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option><option>Grade 10</option>
+            <option>Grade 11</option><option>Grade 12</option>
           </select>
         </div>
 
         <div>
-          <label for="service">Which program sounds most fun?</label>
-          <select id="service" name="Service Type" required>
-            <option value="" disabled selected>Select a program</option>
-            <option>Junior Innovators (Ages 5–8)</option>
-            <option>High School Teen Mentorship Track</option>
-            <option>Not sure yet! Let's chat.</option>
-          </select>
+          <label for="preferredLibrary">Preferred Library Branch</label>
+          <input id="preferredLibrary" name="Preferred Library" type="text" placeholder="e.g., Gaithersburg, Germantown, Silver Spring" required />
         </div>
 
         <div class="full">
-          <label for="courses">What are they most excited to try? (Select all that apply)</label>
+          <label for="courses">Math Topics / Focus Areas Needed</label>
           <select id="courses" name="Courses Interested In" multiple required size="5">
-            <option value="Building Robots">Building Physical Robots</option>
-            <option value="Coding Games">Writing Code / Making Games</option>
-            <option value="Making Friends">Making New Friends & Teamwork</option>
-            <option value="Mentoring">Being a Leader / Teen Mentor</option>
-            <option value="Everything">A little bit of everything!</option>
+            <option value="Basic Skills & Arithmetic">Foundational Arithmetic & Number Skills</option>
+            <option value="Homework Accuracy">Homework Help & Problem Solving</option>
+            <option value="Pre-Algebra / Algebra">Pre-Algebra or Algebra 1 & 2</option>
+            <option value="Geometry">Geometry</option>
+            <option value="Test Preparation">Quiz & Test Preparation</option>
           </select>
         </div>
 
         <div class="full">
-          <label for="availability">What are your ideal Saturdays like?</label>
-          <input id="availability" name="Preferred Availability" type="text" placeholder="Example: Saturday mornings are best for us!" required />
+          <label for="availability">Preferred Session Days & Times</label>
+          <input id="availability" name="Preferred Availability" type="text" placeholder="e.g., Weekday afternoons after 4 PM, Saturday mornings" required />
         </div>
 
         <div class="full">
-          <label for="notes">Tell us about your child! (Optional)</label>
-          <textarea id="notes" name="Notes" placeholder="Are they shy? Do they love LEGOs? Have they coded before? We'd love to know what makes them smile!"></textarea>
+          <label for="notes">Additional Information about the Student (Optional)</label>
+          <textarea id="notes" name="Notes" placeholder="Share any specific math challenges, upcoming tests, or learning preferences..."></textarea>
         </div>
 
         <div class="full">
-          <button class="btnform" type="submit" id="submitBtn">Send to Integra Flow</button>
-          <div id="statusMessage" class="status" aria-live="polite"></div>
+          <button class="btn-submit" type="submit" id="submitBtn">Submit Request</button>
+          <div id="statusMessage" class="status"></div>
         </div>
       </form>
     </div>
   </div>
 
   <footer>
-    <p>
-      Contact:
-      <a href="mailto:dmv4tech@gmail.com">dmv4tech@gmail.com</a> |
-      Phone: <a href="tel:+12029109000">+1 202-910-9000</a>
-    </p>
-    <p>© 2026 Integra Flow LLC</p>
+    <p>Serving Montgomery County, MD Public Libraries | Email: <a href="mailto:tayebworkneh@gmail.com">tayebworkneh@gmail.com</a> | Phone: <a href="tel:+13012508174">301-250-8174</a></p>
+    <p>&copy; 2026 Integra Flow LLC</p>
   </footer>
 
   <script>
@@ -149,28 +208,29 @@
 
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      status.textContent = "Sending your message...";
+      status.textContent = "Submitting request...";
       status.className = "status";
+      status.style.display = "block";
       submitBtn.disabled = true;
 
-      fetch(scriptURL, { method: "POST", body: new FormData(form) })
-        .then((response) => {
-          if (response.ok) {
-            status.textContent = "All set! We can't wait to chat with you soon.";
-            status.className = "status success";
-            form.reset();
-          } else {
-            status.textContent = "Oops, something went wrong. Please try again.";
-            status.className = "status error";
-          }
-        })
-        .catch(() => {
-          status.textContent = "Oops, something went wrong. Please try again.";
-          status.className = "status error";
-        })
-        .finally(() => {
-          submitBtn.disabled = false;
-        });
+      fetch(scriptURL, { 
+        method: "POST", 
+        mode: "no-cors", 
+        body: new FormData(form) 
+      })
+      .then(() => {
+        status.textContent = "Thank you! Request received. Mr. Taye will contact you shortly.";
+        status.className = "status success";
+        form.reset();
+      })
+      .catch((error) => {
+        console.error('Error!', error.message);
+        status.textContent = "Unable to submit. Please try again or email directly.";
+        status.className = "status error";
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+      });
     });
   </script>
 </body>

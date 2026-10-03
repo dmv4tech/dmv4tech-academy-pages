@@ -2,83 +2,146 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Robotics & Coding Lab | Integra Flow Academy</title>
-  <meta name="description" content="Welcoming, hands-on robotics and programming camps for kids and teens in Montgomery County." />
-<style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Middle School Math Tutoring (Grades 6–8) | Mr. Taye</title>
+  <meta name="description" content="Middle school math tutoring for Grades 6 through 8. Pre-Algebra, Ratios, Geometry, and building academic problem-solving confidence." />
+  <style>
     :root {
-      --blue:#0A1F44;
-      --orange:#D4AF37;
-      --light:#f6f7fb;
-      --white:#fff;
-      --text:#111827;
-      --muted:#4b5563;
+      --primary: #0A1F44;
+      --accent: #D4AF37;
+      --bg-light: #F4F7FA;
+      --card-bg: #FFFFFF;
+      --text: #1F2937;
+      --muted: #4B5563;
+      --radius: 12px;
     }
-    html,body{margin:0;padding:0;scroll-behavior:smooth;}
-    body { font-family: Arial, Helvetica, sans-serif; background: var(--light); color: var(--text); line-height: 1.6; min-height: 100vh; }
-    
-    header { background: var(--blue); color:#fff; padding: 26px 18px; text-align:center; }
-    header h1{margin:0;font-size:2.2em;}
-    header p{margin:10px 0 0;opacity:0.95;font-size:1.05em;}
-    
-    nav { background: var(--orange); display:flex; justify-content:center; gap: 10px 18px; flex-wrap:wrap; padding: 10px 12px; }
-    nav a { color:#0a1f44; text-decoration:none; font-weight:800; background: rgba(255,255,255,0.45); padding: 6px 10px; border-radius: 999px; }
-    
-    .wrap{max-width:980px;margin:0 auto;padding:18px 14px 34px;}
-    .card{background:var(--white);border-radius:14px;padding:20px 18px;box-shadow:2px 2px 10px rgba(0,0,0,0.08);margin-top:16px;}
-    .kicker{display:inline-block;background: rgba(212,175,55,0.18); border:1px solid rgba(212,175,55,0.35); border-radius:999px;padding:6px 10px;font-size:13px;color:var(--blue);margin-bottom:10px;font-weight:800;}
-    
-    .btn { display:inline-block; background: var(--blue); color:#fff; text-decoration:none; padding: 12px 16px; border-radius: 10px; font-weight: 800; }
-    .btn.secondary { background: #f2f3f5; color: var(--blue); border: 1px solid rgba(10,31,68,0.15); }
-    .cta{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;}
-    
-    footer { text-align:center; background: var(--blue); color:#fff; padding: 18px; font-size: 0.95em; margin-top: 22px; }
-    footer a{color:#fff;text-decoration: underline;}
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background-color: var(--primary);
+      color: #FFF;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    header h1 { margin: 0 0 10px; font-size: 2.2rem; }
+    header p { margin: 0; opacity: 0.95; font-size: 1.05rem; }
+    nav {
+      background-color: var(--accent);
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      padding: 12px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.4);
+      transition: background 0.2s ease;
+    }
+    nav a:hover, nav a.active { background: #FFF; }
+    .wrap { max-width: 900px; margin: 30px auto; padding: 0 16px; }
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 30px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    .tag {
+      display: inline-block;
+      background: rgba(212, 175, 55, 0.2);
+      color: var(--primary);
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+    }
+    h2 { color: var(--primary); margin-top: 0; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 12px; }
+    .cta-row { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: #153266; }
+    .btn-secondary {
+      background: #E5E7EB;
+      color: var(--primary);
+    }
+    .btn-secondary:hover { background: #D1D5DB; }
+    footer {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Integra Flow Academy</h1>
-    <p>Saturday Robotics & Coding Labs (Ages 5–18)</p>
+    <h1>Middle School Math Mastery</h1>
+    <p>1:1 Tutoring for Grades 6–8</p>
   </header>
 
-<nav>
+  <nav>
     <a href="index.html">Home</a>
-    <a href="page4.html">Programs</a>
-    <a href="waitlist.html">Enroll</a>
+    <a href="page1.html">Elementary (1–5)</a>
+    <a href="page2.html" class="active">Middle School (6–8)</a>
+    <a href="page3.html">High School (9–12)</a>
+    <a href="page4.html">Locations & Approach</a>
+    <a href="waitlist.html">Enrollment</a>
     <a href="contact.html">Contact</a>
-</nav>
+  </nav>
 
   <div class="wrap">
     <div class="card">
-      <div class="kicker">Core Program</div>
-      <h2 style="margin:0 0 8px;">Robotics & Coding Lab</h2>
-      <p style="margin:0; color: var(--muted);">
-        Watch your child's imagination come to life! In our supportive weekend labs, students discover how much fun it is to build physical robots and write the code that makes them move. 
+      <span class="tag">Grades 6 – 8</span>
+      <h2>Bridging Concrete Arithmetic to Abstract Thinking</h2>
+      <p>
+        Middle school is a pivotal transition period. Math shifts from arithmetic rules to abstract reasoning. 
+        Mr. Taye provides calm, step-by-step guidance to ensure students don't fall behind during this crucial stage.
       </p>
 
-      <h3 style="margin:16px 0 8px;">What They Will Discover</h3>
+      <h3>Key Academic Concepts Covered</h3>
       <ul>
-        <li><strong>For the Little Ones (5–8):</strong> We focus on the joy of creating. Using block-based coding and child-friendly robotics, they learn early math and spatial logic without even realizing they're studying!</li>
-        <li><strong>For our Teens:</strong> A safe place to stretch their skills. They'll dive into real-world programming languages (like Python) and build projects they can be truly proud of.</li>
-        <li><strong>The Magic of Teamwork:</strong> No one learns in isolation. Our high schoolers gently mentor the younger kids, creating a beautiful cycle of community learning.</li>
-        <li><strong>Creative Problem Solving:</strong> We celebrate mistakes as part of the learning process! Kids learn how to tinker, test, and try again with a smile.</li>
+        <li><strong>Pre-Algebra Readiness:</strong> Variables, expressions, and solving simple one-step and multi-step equations.</li>
+        <li><strong>Ratios, Rates, & Percentages:</strong> Real-world mathematical applications and unit rate calculations.</li>
+        <li><strong>Introductory Geometry:</strong> Understanding perimeter, area, volume, coordinate planes, and angles.</li>
+        <li><strong>Study & Test Preparation:</strong> Techniques for reviewing homework efficiently and tackling school exams calmly.</li>
       </ul>
 
-      <div class="cta">
-        <a class="btn" href="waitlist.html">Join Our Welcome List</a>
-        <a class="btn secondary" href="contact.html">Ask a question</a>
+      <div class="cta-row">
+        <a class="btn" href="waitlist.html">Reserve a Spot</a>
+        <a class="btn btn-secondary" href="contact.html">Get in Touch</a>
       </div>
     </div>
   </div>
 
   <footer>
-    <p>
-      Contact:
-      <a href="mailto:dmv4tech@gmail.com">dmv4tech@gmail.com</a> |
-      Phone: <a href="tel:+12029109000">+1 202-910-9000</a>
-    </p>
-    <p>© 2026 Integra Flow LLC</p>
+    <p>Serving Montgomery County, MD Public Libraries | Email: <a href="mailto:tayebworkneh@gmail.com">tayebworkneh@gmail.com</a> | Phone: <a href="tel:+13012508174">301-250-8174</a></p>
+    <p>&copy; 2026 Integra Flow LLC</p>
   </footer>
+
 </body>
 </html>
