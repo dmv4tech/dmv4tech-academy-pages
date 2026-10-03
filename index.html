@@ -15,7 +15,9 @@
       --muted: #4B5563;
       --radius: 12px;
     }
+
     *, *::before, *::after { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -23,6 +25,8 @@
       color: var(--text);
       line-height: 1.6;
     }
+
+    /* Header */
     header {
       background-color: var(--primary);
       color: #FFF;
@@ -39,13 +43,22 @@
       font-size: 1.1rem;
       opacity: 0.9;
     }
+
+    /* Navigation - Desktop Default */
     nav {
       background-color: var(--accent);
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 12px;
-      padding: 12px;
+      padding: 12px 20px;
+      position: relative;
+    }
+    .nav-links {
+      display: flex;
+      gap: 12px;
       flex-wrap: wrap;
+      justify-content: center;
     }
     nav a {
       color: var(--primary);
@@ -55,16 +68,32 @@
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.4);
       transition: background 0.2s ease, transform 0.2s ease;
+      font-size: 0.95rem;
     }
     nav a:hover, nav a.active {
       background: #FFF;
       transform: translateY(-1px);
     }
+
+    /* Mobile Toggle Button (Hidden on Desktop) */
+    .menu-toggle {
+      display: none;
+      background: var(--primary);
+      color: #FFF;
+      border: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
     .hero {
       background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%);
       color: white;
       text-align: center;
-      padding: 40px 20px;
+      padding: 50px 20px 40px;
       margin-bottom: -30px;
     }
     .hero-content {
@@ -75,6 +104,8 @@
       font-size: 1.8rem;
       margin-top: 0;
     }
+
+    /* Layout Containers */
     .container {
       max-width: 850px;
       margin: 0 auto;
@@ -95,6 +126,7 @@
       padding-bottom: 10px;
     }
 
+    /* About Grid - Desktop Layout */
     .about-grid {
       display: grid;
       grid-template-columns: 220px 1fr;
@@ -111,15 +143,6 @@
       border: 3px solid var(--accent);
       box-shadow: 0 4px 12px rgba(0,0,0,0.12);
     }
-    @media (max-width: 650px) {
-      .about-grid {
-        grid-template-columns: 1fr;
-        justify-items: center;
-      }
-      .profile-photo {
-        max-width: 240px;
-      }
-    }
 
     .intro-text {
       font-size: 1.05rem;
@@ -127,11 +150,13 @@
       line-height: 1.7;
       margin-top: 0;
     }
+
+    /* Highlight Grid */
     .highlight-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 16px;
-      margin: 20px 0 0;
+      margin: 24px 0 0;
     }
     .highlight-item {
       background: var(--bg-light);
@@ -142,6 +167,8 @@
       color: var(--primary);
       border-left: 4px solid var(--accent);
     }
+
+    /* Interactive Checklist */
     .interactive-checklist {
       display: grid;
       gap: 12px;
@@ -169,11 +196,14 @@
       margin-right: 14px;
       accent-color: var(--primary);
       cursor: pointer;
+      flex-shrink: 0;
     }
     .check-label.selected {
       border-color: var(--primary);
       background: #F0F4FA;
     }
+
+    /* Call to Action */
     .cta-area {
       text-align: center;
       margin-top: 30px;
@@ -194,6 +224,8 @@
       background: #153266;
       transform: translateY(-2px);
     }
+
+    /* Footer */
     footer {
       background: var(--primary);
       color: white;
@@ -204,6 +236,108 @@
     }
     footer a { color: var(--accent); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
+
+    /* ===================================================
+       MOBILE RESPONSIVE STYLES (Max Width: 768px)
+       =================================================== */
+    @media (max-width: 768px) {
+      header {
+        padding: 25px 15px 20px;
+      }
+      header h1 {
+        font-size: 1.75rem;
+      }
+      header p {
+        font-size: 0.95rem;
+      }
+
+      /* Mobile Nav Drawer Toggle */
+      nav {
+        justify-content: space-between;
+        padding: 10px 16px;
+      }
+      .menu-toggle {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      nav a {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+      }
+
+      /* Hero Section Mobile */
+      .hero {
+        padding: 30px 15px 35px;
+      }
+      .hero h2 {
+        font-size: 1.4rem;
+      }
+      .hero p {
+        font-size: 0.95rem;
+      }
+
+      /* Cards & Grids Mobile */
+      .card {
+        padding: 20px 16px;
+        margin-top: 20px;
+      }
+      .card h2 {
+        font-size: 1.3rem;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 16px;
+      }
+      .profile-photo {
+        max-width: 220px;
+        height: 250px;
+      }
+
+      .intro-text {
+        font-size: 0.98rem;
+        text-align: left;
+      }
+
+      .highlight-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .highlight-item {
+        padding: 12px 8px;
+        font-size: 0.88rem;
+      }
+
+      .check-label {
+        padding: 12px 14px;
+        font-size: 0.92rem;
+      }
+
+      .btn-cta {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .highlight-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -214,12 +348,15 @@
 </header>
 
 <nav>
-  <a href="index.html" class="active">Home</a>
-  <a href="page1.html">Elementary (1–5)</a>
-  <a href="page2.html">Middle School (6–8)</a>
-  <a href="page3.html">High School (9–12)</a>
-  <a href="waitlist.html">Enrollment</a>
-  <a href="contact.html">Contact</a>
+  <button class="menu-toggle" id="menuToggle" onclick="toggleNav()">Navigation Menu ☰</button>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html" class="active">Home</a>
+    <a href="page1.html">Elementary (1–5)</a>
+    <a href="page2.html">Middle School (6–8)</a>
+    <a href="page3.html">High School (9–12)</a>
+    <a href="waitlist.html">Enrollment</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </nav>
 
 <section class="hero">
@@ -307,6 +444,11 @@
     } else {
       label.classList.remove('selected');
     }
+  }
+
+  function toggleNav() {
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('open');
   }
 </script>
 
